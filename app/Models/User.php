@@ -11,6 +11,11 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    public static $roles = [
+        "USER" => "USER",
+        "ADMIN" => "ADMIN"
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +26,10 @@ class User extends Authenticatable
         'firstName',
         'lastName',
         'dateOfBirth',
+
+        'blocked',
+
+        'role',
 
         'gender',
 
@@ -60,6 +69,8 @@ class User extends Authenticatable
 
         'gender' => 'boolean',
 
+        'blocked' => 'boolean',
+
         'passportId' => 'integer',
         'passportPeriod' => 'datetime:"d/m/Y"',
 
@@ -93,5 +104,10 @@ class User extends Authenticatable
     {
         $v = explode('@', $this->contactEmail);
         return count($v) > 1 ? substr($v[0], 0, strlen($v[0]) / 2) . substr('***********************************************', 0, strlen($v[0]) / 2) . '@' . $v[1] : $this->contactEmail;
+    }
+
+    public function isAdmin()
+    {
+        return $this->role == User::$roles['ADMIN'];
     }
 }

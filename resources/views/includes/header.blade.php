@@ -1,4 +1,4 @@
-<div class="e-navbar">
+<div class="e-navbar e-not-print">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand mr-2" href="/">
@@ -31,6 +31,9 @@
                                 {{ \App\Http\Controllers\AuthController::getCurrentUser()->getFullName() }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @if($user->isAdmin())
+                                    <a class="dropdown-item text-danger" href="{{ route('acp') }}">Admin Panel</a>
+                                @endif
                                 <a class="dropdown-item" href="/my">My Account</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout"><span class="cil-account-logout mr-2 font-weight-bolder"></span> Log Out</a>

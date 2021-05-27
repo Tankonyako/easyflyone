@@ -47,8 +47,8 @@
                         <select class="e-select-advanced e-select form-control" placeholder="Write airport name" name="airport_destination" id="__e_AirportDestination">
                             @include('includes.airlines', ['default' => 'LAX'])
                         </select>
-                        <div class="d-md-flex d-block mt-3">
-                            <p class="m-0 mr-auto e-font-2xl"><span class="cil-user-female"></span> Passengers: </p>
+                        <div class=" d-block mt-3">
+                            <p class="mb-2 m-0 mr-auto e-font-2xl"><span class="cil-user-female"></span> Passengers: </p>
                             <nav aria-label="Number of passenger" class="e-select-passenger-home-count ml-auto">
                                 <ul class="pagination mb-0">
                                     <li class="page-item"><a data-passengers-count="1" class="page-link __e_ChangePassengersCount active" href="#">1</a></li>

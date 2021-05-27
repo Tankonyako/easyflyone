@@ -22,6 +22,17 @@ class AuthPageController extends Controller
         return view('pages.login', ['logout' => true]);
     }
 
+    public function blockedPage()
+    {
+        if (!AuthController::isUserLogged())
+            return \redirect()->route('home');
+
+        if (!AuthController::getCurrentUser()->blocked)
+            return \redirect()->route('home');
+
+        return view('pages.blocked');
+    }
+
     public function logout(Request $request)
     {
         if (AuthController::isUserLogged())

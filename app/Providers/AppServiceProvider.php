@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use View;

@@ -95,6 +95,10 @@
                 return this.getElement().val();
             }
 
+            setValue(val) {
+                return this.getElement().val(val);
+            }
+
             setText(text) {
                 return this.getElement().text(text);
             }

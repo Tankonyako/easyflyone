@@ -8,7 +8,7 @@
     <div>
         @if($foundTicket)
 
-            <div class="e-ticket">
+            <div class="e-ticket e-main-print">
                 <div class="row">
                     <div class="col-md-2 e-qr ml-4 pt-3">
                         <img width="100%" class="mb-2" src="{{ asset('img/logo-m.png') }}">
@@ -83,7 +83,11 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-outline-dark mt-3"><span class="cil-print"></span> Print the ticket</a>
+            <a class="btn btn-outline-dark mt-3 no e-not-print" href="#" onclick="window.print();"><span class="cil-print"></span> Print the ticket</a>
+            <p class="e-only-print pt-3">
+                The content of this paper is confidential and intended for the owner and airlines only. It is strictly forbidden to share any part of this paper with any third party, without a written consent of the owner. If you received this paper by mistake or found it, please send report to support@easyfly.one
+            </p>
+            <hr class="e-only-print">
         @else
             <div class="d-flex mt-5">
                 <div class="m-auto">

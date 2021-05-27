@@ -11,7 +11,7 @@
     @php($posts = \App\Models\News::take($limit)->get())
 @endif
 
-<div class="e-news p-2">
+<div class="@if(!$min) e-news @endif p-2">
     <h1 class="font-weight-light text-center mt-2">@if(isset($newsid)) {{ $posts[0]->name }} @else EasyFly Journal News @endif</h1>
     <div class="row">
         @foreach($posts as $post)
@@ -54,9 +54,17 @@
                             <p class="text-right e-news-date mt-1 mb-0">{{ $post->date }}</p>
                         @if($horizontal) </div> @endif
                     @if($horizontal) </div> @endif
+
+                    @if($user && $user->isAdmin())
+                        <form method="POST" action="/acp/remove/news">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $post->id }}">
+                            <button type="submit" class="btn btn-danger btn-sm mt-1 mx-auto">Delete</button>
+                        </form>
+                    @endif
                 </div>
             </div>
-            @if(!$ad && $limit != 3)
+            @if(!$ad && $limit != 3 && !$min)
                 <div class="col-md-2">
                     <img src="https://trainify.in/wp-content/uploads/2019/05/Ad_could_be_here.png" width="100%">
                 </div>

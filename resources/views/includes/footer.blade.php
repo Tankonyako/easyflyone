@@ -1,4 +1,4 @@
-<div class="e-footer e-sh-1">
+<div class="e-footer e-sh-1 e-not-print">
     <div class="container">
         <div class="row pt-3 pb-3 text-light">
             <div class="col-md d-flex">

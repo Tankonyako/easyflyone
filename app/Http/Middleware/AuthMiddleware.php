@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use App\Http\Controllers\AuthController;
 use Closure;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Route;
 
 class AuthMiddleware
 {
@@ -17,7 +18,11 @@ class AuthMiddleware
      */
     public function handle($request, Closure $next)
     {
-        AuthController::getCurrentUser(); // Check if we logged for first time.
+        view()->share('user', AuthController::getCurrentUser()); // Check if we logged for first time.
+
+        if (AuthController::isUserLogged() && Route::getCurrentRoute()->uri != 'blocked')
+            if (AuthController::getCurrentUser()->blocked)
+                return redirect()->route('blocked');
 
         return $next($request);
     }

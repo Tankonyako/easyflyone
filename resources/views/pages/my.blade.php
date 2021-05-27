@@ -63,19 +63,15 @@
                     @elseif($type == 'tickets')
                         <h3><span class="cil-airplane-mode"></span> Tickets</h3>
                         <hr>
-                        <div class="row justify-content-center">
-                            @foreach($user->getTickets() as $ticket)
-                                <div class="col-md-3 e-ticket-in-profile rounded border">
-                                    <a href="/ticket/{{ $ticket->uid }}">
-                                        <div class="e-qr-profile">
-                                            {!! QrCode::size(250)->generate($ticket->uid); !!}
-                                        </div>
-                                        <hr class="mb-1">
-                                        <h4>{{ $ticket->uid }}</h4>
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
+                        @if(count($user->getTickets()) == 0)
+                            <h3><span class="cil-book"></span> Tickets not found!</h3>
+                        @else
+                            <div class="row justify-content-center">
+                                @foreach($user->getTickets() as $ticket)
+                                    @include('includes.ticket_preview', ['ticket' => $ticket])
+                                @endforeach
+                            </div>
+                        @endif
                     @endif
                 </div>
             </div>

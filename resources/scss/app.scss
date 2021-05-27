@@ -42,6 +42,55 @@
     //border-radius: 15px;
 }
 
+html
+{
+    overflow-x: hidden;
+}
+
+@media print {
+    .e-not-print
+    {
+        display:none;
+    }
+    .e-only-print
+    {
+        display: block !important;
+    }
+    .container
+    {
+        width: 100% !important;
+        margin: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    html, body {
+        height:100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
+    }
+}
+.e-only-print
+{
+    display: none;
+}
+@page {
+    size: 8cm auto; //
+    width: 9cm; //
+    height: 100%; //
+    margin: 0;
+    margin-left: 0px !important; // this is for me.
+    padding: 0px !important;
+}
+
+@page :left {
+    margin-left: 0cm !important;
+}
+
+@page :right {
+    margin-left: 0cm !important;
+}
+
 form
 {
     margin: 0;
@@ -69,6 +118,22 @@ html
     min-height: 100%;
 
     background-image: linear-gradient( 45deg, rgb(235, 237, 239) 0%, rgb(194, 201, 224) 100%);
+
+    @media (max-width: 992px)
+    {
+        .container, .container-md, .container-sm {
+            max-width: 98%;
+        }
+    }
+
+    .e-new-flights
+    {
+        background-image: url("https://static01.nyt.com/images/2021/03/17/travel/05new-airlines-print/05new-airlines-print-mobileMasterAt3x-v2.jpg");
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(69, 74, 80, 0.93);
+        background-blend-mode: overlay;
+    }
 
     .e-app-content
     {
@@ -540,11 +605,13 @@ html
 
     .e-home-news
     {
-        background-image: url("https://background-tiles.com/overview/black/patterns/large/1035.png");
-        background-size: 20%;
+        background-image: url("/img/news_bg.jpg");
+        background-size: cover;
         background-position-y: bottom;
         background-position-x: left;
-        background-repeat: repeat;
+        background-repeat: no-repeat;
+        background-color: #4772b86b;
+        background-blend-mode: darken;
         .e-news
         {
             .e-post-title
