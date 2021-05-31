@@ -146,7 +146,7 @@ class AdminPageController extends Controller
     public function addNewPost(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|min:2|max:30',
+            'name' => 'required|min:2|max:300',
             'description' => 'required|min:2',
             'image' => 'required|min:2'
         ]);

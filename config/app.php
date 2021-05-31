@@ -2,7 +2,7 @@
 
 return [
 
-    'discord' => 'https://discord.gg/W9NaHWh884',
+    'discord' => 'https://discord.gg/5w2VHy7gEP',
 
     /*
     |--------------------------------------------------------------------------

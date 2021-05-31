@@ -14,8 +14,9 @@
 <div class="@if(!$min) e-news @endif p-2">
     <h1 class="font-weight-light text-center mt-2">@if(isset($newsid)) {{ $posts[0]->name }} @else EasyFly Journal News @endif</h1>
     <div class="row">
+        @php($i = 1)
         @foreach($posts as $post)
-            <div class="@if($horizontal) col-md-10 @else col-md-4 @endif h-100 pb-0">
+            <div class="@if($horizontal) col-md-10 @else col-md-4 @endif h-100 pb-0 wow bounceIn" data-wow-delay="{{ $i * 300 }}ms">
                 <div class="e-post mb-0 pt-3 pr-3 pl-3 pb-0">
                     @if($horizontal) <div class="row"> @endif
                         @if($horizontal) <div class="col-md-4"> @endif
@@ -55,7 +56,7 @@
                         @if($horizontal) </div> @endif
                     @if($horizontal) </div> @endif
 
-                    @if($user && $user->isAdmin())
+                    @if($user && $user->isAdmin() && $limit != 1)
                         <form method="POST" action="/acp/remove/news">
                             @csrf
                             <input type="hidden" name="id" value="{{ $post->id }}">
@@ -70,6 +71,7 @@
                 </div>
                 @php($ad = true)
             @endif
+            @php($i++)
         @endforeach
     </div>
     @if($showmore)

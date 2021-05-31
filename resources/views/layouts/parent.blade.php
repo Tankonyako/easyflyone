@@ -14,6 +14,7 @@
     <link href="{{ asset('css/datapicker.css') }}" rel="stylesheet">
     <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/payment-icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
 
     @stack('styles')
     @stack('meta')
@@ -32,6 +33,29 @@
             currentUser = JSON.parse(`{!! \App\Http\Controllers\AuthController::getCurrentUser()->serialize() !!}`.replaceAll('\"\"', '\"'));
             currentUser.isLogged = true;
         @endif
+        window.newFlights = [];
+        @foreach(\App\Models\NewFlight::all() as $newFlight)
+            window.newFlights.push({
+                @if($newFlight->name)
+                    name: `{{ $newFlight->name }}`,
+                @endif
+                    @if($newFlight->image)
+                    image: `{{ $newFlight->image }}`,
+                @endif
+                    @if($newFlight->description)
+                    description: `{{ $newFlight->description }}`,
+                @endif
+                @if($newFlight->price)
+                    price: `{{ $newFlight->price }}`,
+                @endif
+                @if($newFlight->originIata)
+                    originIata: `{{ $newFlight->originIata }}`,
+                @endif
+                @if($newFlight->destinationIata)
+                    destinationIata: `{{ $newFlight->destinationIata }}`,
+                @endif
+            });
+        @endforeach
     </script>
 
     @yield('beforeParent')
@@ -45,10 +69,10 @@
     <script type="text/javascript" src="{{ asset('js/datapicker.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/moment.duration.addon.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/wow.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/app/index.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/app/utils.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/toastr.min.js') }}"></script>
-
 
     @if (Session::has('toast'))
         <script>

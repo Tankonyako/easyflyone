@@ -723,7 +723,7 @@ html {
   min-height: 300px;
 }
 .e-app .e-booking .e-booking-header {
-  height: 80px;
+  min-height: 80px;
   width: 100%;
   background: #ececec;
   border-top-right-radius: 15px;

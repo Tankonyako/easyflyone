@@ -59,4 +59,6 @@ $(document).ready(function() {
     }, 500)
 
     window.app = app;
+
+    new WOW().init();
 });

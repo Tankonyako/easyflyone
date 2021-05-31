@@ -1,4 +1,4 @@
-<div class="e-navbar e-not-print">
+<div class="e-navbar e-not-print wow fadeInDown">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand mr-2" href="/">

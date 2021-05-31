@@ -5,8 +5,8 @@
         @include('includes.tickets')
     </div>
 
-    <div class="mt-3 mb-3 e-sh-1 e-round pb-3 pt-3 e-new-flights bg-light">
-        <h1 class="text-center">New Flight's</h1>
+    <div class="mt-3 mb-3 e-sh-1 e-round pb-3 pt-3 e-new-flights bg-light wow fadeInRightBig">
+        <h1 class="text-center">New Flights</h1>
         <hr>
         <div class="row justify-content-center">
             @foreach(\App\Models\NewFlight::all() as $newFlight)
@@ -19,7 +19,7 @@
         @include('includes.news', ['limit' => 3, 'showmore' => true, 'horizontal' => false, 'min' => false])
     </div>
 
-    <div class="e-discord-info pt-5 pt-md-0 e-sh-1 p-5 p-md-3 mt-3">
+    <div class="e-discord-info pt-5 pt-md-0 e-sh-1 p-5 p-md-3 mt-3 wow fadeInRightBig">
         <div class="row">
             <div class="col-md-4 d-flex e-discord-logo-box">
                 <span class="cib-discord text-white text-right m-auto"></span>

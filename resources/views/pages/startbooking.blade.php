@@ -3,12 +3,15 @@
 @section('content')
     @php($hasErrors = $errors->any())
     <div class="e-booking e-sh-0 e-round">
-        <div class="e-booking-header pl-5 pr-5 d-flex">
-            <h3 class="mr-auto"><span class="cil-airplane-mode"></span> Booking - <span id="__e_BookingState" class="font-weight-normal">@if($hasErrors) Error! @else Loading... @endif</span></h3>
-
-            <a class="ml-auto e-booking-close btn btn-outline-dark my-auto" href="{{ route('home') }}"><span class="cil-backspace"></span> Back to home</a>
+        <div class="e-booking-header pl-md-5 pl-1 pr-md-5 pr-1 row m-0 pb-3 pb-md-0">
+            <div class="col-md d-flex">
+                <h3 class="mr-auto"><span class="cil-airplane-mode"></span> Booking - <span id="__e_BookingState" class="font-weight-normal">@if($hasErrors) Error! @else Loading... @endif</span></h3>
+            </div>
+            <div class="col-md-2 d-flex">
+                <a class="ml-auto e-booking-close btn btn-outline-dark my-auto" href="{{ route('home') }}"><span class="cil-backspace"></span> Back to home</a>
+            </div>
         </div>
-        <div class="e-booking-content pl-5 pr-5 pt-2">
+        <div class="e-booking-content pl-md-5 pl-1 pr-md-5 pr-1 pt-2">
             @if($hasErrors)
                 <div class="alert alert-danger bg-transparent m-0 p-0">
                     <ul class="m-0">

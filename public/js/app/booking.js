@@ -175,7 +175,14 @@
 
     function setContent(html)
     {
-        let km, minToGo;
+        let km = utils.getDistanceFromLatLonInKm(origin._geoloc.lat, origin._geoloc.lng, destination._geoloc.lat, destination._geoloc.lng).toFixed(2);
+        let cost = 0;
+        let newFlight = newFlights.find(a => a.originIata == origin_iata && a.destinationIata == destination_iata);
+        if (newFlight != null)
+            cost = (parseFloat(newFlight.price) * (passengerLimit)).toFixed(2);
+        else
+            cost = ((((((km / 2 > 11111 ? 11111 : km /2) / 2 * 1.2) > 444 ? 460 : ((km > 666 ? 666 : km) / 2 * 1.2))) * 1.1 * (willReturn ? 1.8 : 1)) * (passengerLimit)).toFixed(2);
+
         content.getElement().html(`
             <div class="row">
                 <div class="col-md-4">
@@ -198,7 +205,7 @@
                         <h4>Booking info: </h4>
                         <ul class="list-group">
                             <li class="list-group-item">
-                            <b>Distance: </b>${km = utils.getDistanceFromLatLonInKm(origin._geoloc.lat, origin._geoloc.lng, destination._geoloc.lat, destination._geoloc.lng).toFixed(2)} km
+                            <b>Distance: </b>${km} km
                             </li>
                             <li class="list-group-item">
                             <b>Passengers: </b>${passengerLimit} people(s)
@@ -207,7 +214,7 @@
                             <b>Duration of flight: </b>${moment.duration(km / 10, "minutes").format("hh:mm", { trim: false }).replaceAll(':', ' hours ').replaceAll('00 hours', '')} minutes
                             </li>
                             <li class="list-group-item">
-                            <b>Average cost: </b>${cost = ((((((km / 2 > 11111 ? 11111 : km /2) / 2 * 1.2) > 444 ? 460 : ((km > 666 ? 666 : km) / 2 * 1.2))) * 1.1 * (willReturn ? 1.8 : 1)) * (passengerLimit)).toFixed(2)} €
+                            <b>Average cost: </b>${cost} €
                             </li>
                         </ul>
                         ${stage == 2 ? `
@@ -261,7 +268,7 @@
             {
                 out += '<div class="e-seat-words">';
 
-                out += `<a class="e-seat-no">е</a>`;
+                out += `<a class="e-seat-no d-none d-md-block">е</a>`;
                 for (let x = 0; x < seats[y].length; x++)
                     out += `<a class="e-seat-nod">${seatRows[x]}</a>`;
                 out += '</div>';
@@ -273,7 +280,7 @@
             {
                 if (x == -1)
                 {
-                    out += `<p class="e-seat-no">${y+1}</p>`;
+                    out += `<p class="e-seat-no d-none d-md-block">${y+1}</p>`;
                     continue;
                 }
                 let seat = seats[y][x].toLowerCase();

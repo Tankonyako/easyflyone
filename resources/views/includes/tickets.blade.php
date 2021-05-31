@@ -1,7 +1,7 @@
 
 <div class="e-tickets e-sh-1 p-2">
     <div class="row">
-        <div class="col-md">
+        <div class="col-md wow fadeIn" data-wow-delay="400ms">
             <div class="card e-card-transparent dark text-light mb-0">
                 <div class="card-body">
                     <h5 class="card-title e-card-title-adv text-white"><span class="cil-flight-takeoff e-card-title-icon"></span> <span class="e-title">Flight Tickets</span></h5>
@@ -12,7 +12,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md">
+        <div class="col-md wow fadeIn" data-wow-delay="800ms">
             <div class="card e-card-transparent dark text-light mb-0">
                 <div class="card-body">
                     <h5 class="card-title e-card-title-adv text-white"><span class="cil-barcode e-card-title-icon"></span> <span class="e-title">Scan Ticket</span></h5>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md">
+        <div class="col-md wow fadeIn" data-wow-delay="1200ms">
             <div class="card e-card-transparent dark text-light mb-0">
                 <div class="card-body">
                     <h5 class="card-title e-card-title-adv text-white"><span class="cil-compass e-card-title-icon"></span> <span class="e-title">Book a flight</span></h5>

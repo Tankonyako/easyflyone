@@ -6,7 +6,7 @@
     @if(!is_null($newFlight->description))
         <p class="text-center mt-0 mb-1">{{ $newFlight->description }}</p>
     @endif
-    <a class="btn btn-warning w-100 mt-1" href="http://localhost:3000/startbook/{{ $newFlight->originIata }}/{{ $newFlight->destinationIata }}">Start booking - {{ $newFlight->price }} €</a>
+    <a class="btn btn-warning w-100 mt-1 wow zoomIn" data-wow-delay="500ms" href="/startbook/{{ $newFlight->originIata }}/{{ $newFlight->destinationIata }}">Start booking - {{ $newFlight->price }} €</a>
     @if($user && $user->isAdmin())
         <form method="POST" action="/acp/remove/new_flights">
             @csrf

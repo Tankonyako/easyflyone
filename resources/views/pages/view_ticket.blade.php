@@ -88,6 +88,31 @@
                 The content of this paper is confidential and intended for the owner and airlines only. It is strictly forbidden to share any part of this paper with any third party, without a written consent of the owner. If you received this paper by mistake or found it, please send report to support@easyfly.one
             </p>
             <hr class="e-only-print">
+            @if($user->isAdmin())
+                <div class="e-not-print mt-2">
+                    <h1>Admin info: </h1>
+                    <h3>Passengers: </h3>
+                    <div class="row mb-2">
+                        @php($i = 1)
+                        @foreach($ticket->getPassengers() as $passenger)
+                            <div class="col-md-3 border-right">
+                                <div class="d-flex">
+                                    <img class="c-avatar c-avatar-xl mx-auto" src="{{ $passenger->photo }}">
+                                </div>
+                                <p class="mb-0 mt-0 font-2xl text-center">Passport: </p>
+                                <h5 class="font-weight-normal mb-0 text-center">{{ $passenger->firstname }} {{ $passenger->lastname }}</h5>
+                                <p class="mb-0 mt-0 font-1xl text-center">{{ $passenger->passportCountry }}</p>
+                                <p class="mb-0 mt-0 font-1xl text-center">{{ $passenger->passportID }} - {{ $passenger->passportExpireDate }}</p>
+
+                                <p class="mb-0 mt-0 font-2xl text-center">Basic information: </p>
+                                <p class="mb-0 mt-0 font-1xl text-center">Passenger #{{ $i}}</p>
+                                <p class="mb-0 mt-0 font-1xl text-center">Seat {{ $passenger->getSeatFormatted() }}</p>
+                            </div>
+                            @php($i++)
+                        @endforeach
+                    </div>
+                </div>
+            @endif
         @else
             <div class="d-flex mt-5">
                 <div class="m-auto">

@@ -5,8 +5,10 @@
     <h2>Manage news:</h2>
     <hr>
 
-    <div class="w-100">
-        @include('includes.news', ['limit' => 1000, 'showmore' => false, 'horizontal' => false, 'min' => true])
+    <div class="w-100 e-main-news">
+        <div class="e-news">
+            @include('includes.news', ['limit' => 1000, 'showmore' => false, 'horizontal' => false, 'min' => true])
+        </div>
     </div>
 
     <a class="btn btn-outline-secondary mt-2" id="__e_AddNewPost"><span class="cil-note-add"></span> Add new post</a>
