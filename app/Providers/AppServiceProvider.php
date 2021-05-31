@@ -26,6 +26,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        \Debugbar::disable();
+
         Schema::defaultstringLength(191);
 
         view()->share('captcha', '<div class="g-recaptcha"></div>');
