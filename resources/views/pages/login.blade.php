@@ -31,7 +31,7 @@
                                     </div>
 
                                     <div class="m-1">
-                                        <form id="__e_form_logout" method="POST" action="{{ url('/auth/logout') }}">
+                                        <form id="__e_form_logout" autocomplete="off" method="POST" action="{{ url('/auth/logout') }}">
                                             @csrf
 
                                             <button class="btn btn-primary ml-auto mr-2" type="submit">Log Out</button>
@@ -63,7 +63,8 @@
                     <div class="col-lg mt-auto mb-auto">
                         <div class="card e-sh-1">
                             <div class="card-body" id="__e_LoginForm">
-                                <form id="__e_form_login" method="POST" action="{{ url('/auth/login') }}">
+                                <form autocomplete="off" id="__e_form_login" method="POST" action="{{ url('/auth/login') }}">
+                                    <input autocomplete="false" name="hidden" type="text" style="display:none;">
                                     @csrf
                                     {!! $captcha !!}
 
@@ -135,7 +136,8 @@
             <div class="col-lg mt-auto mb-auto mb-5">
                 <div class="card e-sh-1">
                     <div class="card-body">
-                        <form id="__e_form_register" method="POST" action="{{ url('/auth/register') }}">
+                        <form autocomplete="off" id="__e_form_register" method="POST" action="{{ url('/auth/register') }}">
+                            <input autocomplete="false" name="hidden" type="text" style="display:none;">
                             @csrf
                             {!! $captcha !!}
 

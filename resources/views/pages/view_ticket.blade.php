@@ -102,7 +102,7 @@
                                 <p class="mb-0 mt-0 font-2xl text-center">Passport: </p>
                                 <h5 class="font-weight-normal mb-0 text-center">{{ $passenger->firstname }} {{ $passenger->lastname }}</h5>
                                 <p class="mb-0 mt-0 font-1xl text-center">{{ $passenger->passportCountry }}</p>
-                                <p class="mb-0 mt-0 font-1xl text-center">{{ $passenger->passportID }} - {{ $passenger->passportExpireDate }}</p>
+                                <p class="mb-0 mt-0 font-1xl text-center">{{ $passenger->passportID }}</p>
 
                                 <p class="mb-0 mt-0 font-2xl text-center">Basic information: </p>
                                 <p class="mb-0 mt-0 font-1xl text-center">Passenger #{{ $i}}</p>
