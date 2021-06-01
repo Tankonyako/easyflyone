@@ -26,7 +26,7 @@
             </div>
             <div class="col-md text-light mt-5 mb-5 border-left">
                 <h1 class="text-white">Join our Discord server!</h1>
-                <h4 class="font-weight-light">You can join our Discord server, and loot <span class="badge badge-warning">5% discount</span> on all booking!</h4>
+                <h4 class="font-weight-light">You can join our Discord server, and loot <span class="badge badge-warning">5% discount</span> on all bookings!</h4>
 
                 <a class="btn btn-outline-light mt-2" href="{{ config('app.discord') }}" target="_blank"> Join our Discord Server</a>
             </div>

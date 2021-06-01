@@ -1,4 +1,4 @@
-<h1>You has been blocked on EasyFly.One</h1>
+<h1>You have been blocked on EasyFly.One</h1>
 <p>You can contact us support@easyfly.one</p>
 <p>Your user is: </p>
 <pre>
