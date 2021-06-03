@@ -16,9 +16,9 @@
             <h1>EasyFly.One Airlines Group</h1>
 
             <p>
-                We aimed to make very cheap flights due to its capacity and aircraft, soon we will open the 2nd airport in Europe! The first was in the city of Prague. We also plan to start developing and buying our own aircraft to further reduce the cost of flights.
+                We are EasyFly.One Airlines Company that was created during writing Bachelor thesis for completing 4 year studies of Engineering Informatics. Firsly, topic was choosen purely to pass studies, but when research was started we have found English-Russian company that needs airlines for private and commercial purposes, so we contacted them to gather requirements, in addition they give us an idea to create a project based on that other companies can create forks to their needs, and here we are!
             </p>
-            <p>We have two office in Europe and it is located in Prague and Vilnius.</p>
+            <p>At this moment we have 2 offices located In UK and Russia, one more will be located in Czech Republic</p>
 
         </div>
     </div>
