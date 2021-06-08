@@ -5,7 +5,7 @@
             <div class="card e-card-transparent dark text-light mb-0">
                 <div class="card-body">
                     <h5 class="card-title e-card-title-adv text-white"><span class="cil-flight-takeoff e-card-title-icon"></span> <span class="e-title">Flight Tickets</span></h5>
-                    <p class="card-text">Hey there! Would you like to have pleasant flight for affordable price? We are here for you, choose your origin and destination, take a cup of coffee or tea and enjoy your flight.</p>
+                    <p class="card-text">Hey there! Would you like to have pleasant flight for affordable price? We are here for you, choose your origin and destination, take a cup of coffee or tea and enjoy your greatest flight.</p>
 
 
                     <p class="mt-1 text-light e-user-agreement">By using our service you agree to our terms and conditions including <a class="e-link" href="{{ route('privacypolicy') }}">privacy policy</a>.</p>
