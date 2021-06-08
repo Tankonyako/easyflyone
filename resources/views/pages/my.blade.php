@@ -60,6 +60,34 @@
                         <h3><span class="cil-lock-unlocked"></span> Change password</h3>
                         <hr>
 
+                        <form method="POST" action="/cp/changepassword">
+                            @csrf
+
+                            <div class="row">
+                                <div class="m-1 col-md-4 pr-0">
+                                    <label class="mb-1">Old password:</label>
+                                    <input class="form-control e-input-black" type="password" placeholder="qwerty" name="password_old">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="m-1 pr-0 col-md-4">
+                                    <label class="mb-1">New password:</label>
+                                    <input class="form-control e-input-black" type="password" placeholder="qwerty" name="password">
+                                </div>
+                                <div class="m-1 pl-0 pr-0 col-md-4">
+                                    <label class="mb-1">Confirm password:</label>
+                                    <input class="form-control e-input-black" type="password" placeholder="qwerty" name="password_confirmation">
+                                </div>
+                                <div class="m-0 col-md-8">
+                                    @include('includes.errors')
+                                </div>
+                            </div>
+                            <div class="m-1">
+                                <p class="text-muted mb-0">When you change your password, you will be logged out of your account.</p>
+                                <button type="submit" class="btn btn-info btn-sm mt-1 mx-auto"><span class="cil-lock-locked"></span> Change password</button>
+                            </div>
+                        </form>
+
                     @elseif($type == 'tickets')
                         <h3><span class="cil-airplane-mode"></span> Tickets</h3>
                         <hr>

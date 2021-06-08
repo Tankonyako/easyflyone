@@ -31,6 +31,7 @@ Route::get('/blocked', [AuthPageController::class, 'blockedPage'])->name('blocke
 
 Route::get('/my', [\App\Http\Controllers\ProfileController::class, 'myProfile'])->name("my");
 Route::get('/my/{type}', [\App\Http\Controllers\ProfileController::class, 'myProfile']);
+Route::post('/cp/changepassword', [\App\Http\Controllers\ProfileController::class, 'changePassword']);
 
 Route::get('/news', [NewsController::class, 'newsPage'])->name('news');
 Route::get('/news/{id}', [NewsController::class, 'newsSpecifyPage']);
